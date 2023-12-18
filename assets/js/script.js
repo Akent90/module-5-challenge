@@ -23,4 +23,12 @@ $(function () {
       localStorage.setItem(timeBlockId, userInput);
     });
 
+    for (var hour = 9; hour <= 17; hour++) {
+      var timeBlockId = 'hour-' + hour;
+      var savedData = localStorage.getItem(timeBlockId);
+
+      if (savedData) {
+        $('#'+timeBlockId).find('.description').val(savedData);
+      }
+    }
 });
