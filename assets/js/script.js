@@ -5,7 +5,9 @@ $(function () {
     var currentHour = dayjs().hour();
 
     for (var hour = 9; hour <= 17; hour++) {
+      var hourId = hour > 12 ? hour - 12 : hour;
       var timeBlock = $('#hour-' + hour);
+
       timeBlock.removeClass('past present future');
 
       if (hour < currentHour) {
